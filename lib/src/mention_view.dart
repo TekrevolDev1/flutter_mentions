@@ -47,6 +47,7 @@ class FlutterMentions extends StatefulWidget {
     this.scrollPhysics,
     this.scrollController,
     this.autofillHints,
+    this.inputFormatters,
     this.appendSpaceOnAdd = true,
     this.hideSuggestionList = false,
     this.onSuggestionVisibleChanged,
@@ -240,6 +241,9 @@ class FlutterMentions extends StatefulWidget {
   /// {@macro flutter.widgets.editableText.autofillHints}
   /// {@macro flutter.services.autofill.autofillHints}
   final Iterable<String>? autofillHints;
+
+  /// Input formatter list
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   FlutterMentionsState createState() => FlutterMentionsState();
@@ -481,6 +485,7 @@ class FlutterMentionsState extends State<FlutterMentions> {
                 scrollPadding: widget.scrollPadding,
                 scrollPhysics: widget.scrollPhysics,
                 controller: controller,
+                inputFormatters: widget.inputFormatters,
               ),
             ),
             ...widget.trailing,
